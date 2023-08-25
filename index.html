@@ -7,15 +7,32 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div1 class="intro">
-        <h1>Post Office Application</h1>
-        <p>This Application Allows you to extract information about the nearest Post Offices, based on your location.</p>
-        <img src="./assests/undraw_messenger_re_8bky 1.png">
-    </div1>
-    <div2 class="buttonpg">
-        <h1 id="text">Your Current IP Address is 127.00.11</h1>
-        <button id="btn">Ge Started</button>
-    </div2>
+    <div id="startPage">
+        <div1 class="intro">
+            <h1>Post Office Application</h1>
+            <p>This Application Allows you to extract information about the nearest Post Offices, based on your location.</p>
+            <img src="./assests/undraw_messenger_re_8bky 1.png">
+        </div1>
+        <div2 class="buttonpg">
+            <h1 id="text"></h1>
+            <button id="btn" onclick="getInfo()">Get Started</button>
+        </div2>
+    </div>
+    <div id="nextPage">
+        <h2 id="h2"></h2>
+        <div id="locDetails">
+        </div>
+        <div id="map">
+           
+        </div>
+        <div id="moreDets">
+            <h1>More Information About You</h1>
+        </div>
+        <div id="getPostOfc">
+            <h1>Post Offices Near You</h1>
+            <input type="search" placeholder="Search by Name">
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

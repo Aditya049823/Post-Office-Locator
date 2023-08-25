@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
 }
-body{
+#startPage{
     display: flex;
 }
 .intro{
@@ -50,4 +50,27 @@ body{
     border: 1px solid grey;
     border-radius: 5px;
     color:white;
+}
+
+#nextPage{
+    background-color: black;
+}
+#nextPage h2{
+    color: #5C5E66;
+    margin: 3px;
+    padding:3px;
+}
+#nextPage h1{
+    text-align: center;
+    color: #5C5E66;
+}
+#locDetails{
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    margin:3px;
+    padding:3px;
+}
+#locDetails p{
+    color: #5C5E66;
+    font-size: 22px;
 }
