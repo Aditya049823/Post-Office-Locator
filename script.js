@@ -25,7 +25,7 @@ function getInfo(){
         <p>Region:${data.region}</p>
         <p>Organisation:${data.org}</p>
         <p>HostName:</p>
-        `
+        `;
         const mapHtml=
         `<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
             <div>
@@ -34,5 +34,26 @@ function getInfo(){
             </div>
         </div>`;
         document.getElementById("map").innerHTML=mapHtml;
-    })
+
+        let dateTime_str=new Date().toLocaleString("en-US",{timeZone:"Asia/Kolkata"});
+
+        let msg="";
+        let pincode=`${data.postal}`;
+        fetch(`https://api.postalpincode.in/pincode/${pincode}`)
+        .then(sol=>sol.json())
+        .then(data1=>{
+            if (data1 && data1.length > 0 && data1[0].Status === "Success") {
+                msg = `${data1[0].Message}`;
+              } else {
+                msg = "No data available";
+              }
+                document.getElementById("moreDets").innerHTML=
+                `<h1>More Information About You</h1>
+                <p>Time-Zone: ${data.timezone}</p>
+                <p>Date & Time: ${dateTime_str}
+                <p>Pincode: ${pincode}
+                <p>Message: ${msg}
+                `;
+            })
+        })
 }
