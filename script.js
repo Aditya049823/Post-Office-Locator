@@ -28,7 +28,7 @@ function getInfo(){
         `;
         const mapHtml=
         `<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-            <div>
+            <div id="mapEmb">
                 <h1>Your Current Location</h1>
                 <iframe src="https://maps.google.com/maps?q=${latLong[0]},${latLong[1]}&z=15&output=embed" width="1000" height="300" frameborder="0" style="border:0"></iframe>
             </div>
@@ -54,6 +54,24 @@ function getInfo(){
                 <p>Pincode: ${pincode}
                 <p>Message: ${msg}
                 `;
-            })
+                
+                let postOffices = data1[0].PostOffice;
+                let cardContainer = document.getElementById("cardContainer");
+                cardContainer.innerHTML = "";
+
+                postOffices.forEach(postOfcData => {
+                let card = document.createElement("div");
+                card.id = "card"; 
+                card.innerHTML = `
+                    <p>Name: ${postOfcData.Name}</p>
+                    <p>Branch Type: ${postOfcData.BranchType}</p>
+                    <p>Delivery status: ${postOfcData.DeliveryStatus}</p>
+                    <p>District: ${postOfcData.District}</p>
+                    <p>Division: ${postOfcData.Division}</p>
+                    `;
+                cardContainer.appendChild(card);
+                });
+
+            });
         })
 }

@@ -57,12 +57,14 @@
 }
 #nextPage h2{
     color: #5C5E66;
-    margin: 3px;
-    padding:3px;
+    font-size: 30px;
+    margin:5px;
+    padding:2px;
 }
 #nextPage h1{
     text-align: center;
     color: #5C5E66;
+    font-size: 40px;
 }
 #locDetails{
     display: grid;
@@ -72,7 +74,9 @@
 }
 #locDetails p{
     color: #5C5E66;
-    font-size: 22px;
+    font-size: 30px;
+    margin:5px;
+    padding:2px;
 }
 
 #moreDets h1{
@@ -105,4 +109,21 @@
     color:#8A8D99;
     border-radius: 5px;
 }
+
+#cardContainer{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+
+#card{
+    color:#8A8D99;
+    background-color:#575A85;
+    border:1px solid #575A85;
+    border-radius: 5px;
+    width:90%;
+    margin: 25px;
+    padding:5px;
+    font-size: 28px;
+}
+
 
